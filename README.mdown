@@ -1,11 +1,34 @@
-# New Page Dialog Plugin for DokuWiki
+New Page Dialog Plugin
+======================
 
-All documentation for the **npd plugin** can be found on the
-[npd plugin page on dokuwiki.org](http://www.dokuwiki.org/plugin:new_page_dialog)
+A DokuWiki plugin which helps people to create new pages.
+
+It focuses on the way people are used to storing files and aims to resemble
+a regular "Save As" dialog with "Add Folder" functionality.
+
+All documentation for this plugin can be found at
+http://www.dokuwiki.org/plugin:npd.
 
 If you install this plugin manually, make sure it is installed in
-`lib/plugins/npd/` - if the folder is called different it
+`lib/plugins/jiralinks/` - if the folder is called different it
 will not work!
 
-Please refer to [the plugins page on dokuwiki.org](http://www.dokuwiki.org/plugins) for additional info
+Please refer to http://www.dokuwiki.org/plugins for additional info
 on how to install plugins in DokuWiki.
+
+This plugin is adopted from the original New Page Dialog plugin by Pierre Spring  at
+https://www.dokuwiki.org/plugin:new_page_dialog.
+
+----
+Copyright (C) 2014 christian studer <christian.studer@meteotest.ch>
+
+This program is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; version 2 of the License
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+See the COPYING file in your DokuWiki folder for details

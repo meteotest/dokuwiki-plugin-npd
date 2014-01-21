@@ -1,7 +1,7 @@
 base   npd
-author Pierre Spring
-email  pierre.spring@liip.ch
-date   2008-01-10
+author christian studer
+email  christian.studer@meteotest.ch
+date   2014-01-21
 name   New Page Dialog
-desc   This Dialog is supposed to help people creating new pages.
+desc   A dialog which helps people to create new pages.
 url    http://www.dokuwiki.org/plugin:new_page_dialog
