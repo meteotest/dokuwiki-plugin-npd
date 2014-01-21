@@ -68,7 +68,7 @@ function ae_clk(m) {
 }
 
 new_folders = new Array();
-addInitEvent(init_index);
+jQuery(function() { init_index(); });
 function firstDescendant(element)
 {
     element = element.firstChild;
@@ -77,14 +77,18 @@ function firstDescendant(element)
 }
 function getEventElement(e)
 {
+	var node = null;
+	
     if (typeof e.srcElement != 'undefined') {
-        var node = e.srcElement;
+        node = e.srcElement;
     } else {
-        var node = e.target;
+        node = e.target;
     }
+    
     if (node.nodeType == 3) {
         node = node.parentNode();
     }
+    
     return node;
 }
 function npd_cancel(e)
@@ -95,13 +99,13 @@ function npd_cancel(e)
 function npd_save(e)
 {
     stop_event(e);
-    var page_name = $('npd_page_name').value;
-    var default_page_name = $('npd_page_name').defaultValue;
+    var page_name = jQuery('#npd_page_name').val();
+    var default_page_name = jQuery('#npd_page_name').attr('value');
     if (page_name == default_page_name) {
         var answer = confirm('<?php echo htmlspecialchars($npd->getLang("dlg_confirm_page_name")); ?>'+page_name);
         if (!answer) return;
     }
-    opener.location.href = "doku.php?do=edit&id=" + $('npd_ns').value + ":" + page_name;
+    opener.location.href = "doku.php?do=edit&id=" + jQuery('#npd_ns').val() + ":" + page_name;
     window.close();
 }
 function npd_new_folder(e)
@@ -129,9 +133,9 @@ function npd_new_folder_cb(folder_name)
         active.parentNode.parentNode.appendChild(node);
     }
 
-    var npd_ns = $('npd_ns');
-    var ns = npd_ns.value.replace(/:*$/,'') + ":" + folder_name;
-    npd_ns.value = ns;
+    var npd_ns = jQuery('#npd_ns');
+    var ns = npd_ns.val().replace(/:*$/,'') + ":" + folder_name;
+    npd_ns.val(ns);
 
     // prepare new node
     var folder = document.createElement('li');
@@ -145,14 +149,14 @@ function npd_new_folder_cb(folder_name)
         node.appendChild(folder);
     }
     active = firstDescendant(firstDescendant(folder));
-    addEvent(active, "click", new_folder_click);
+    jQuery(active).click(new_folder_click);
 
     var edit = active.nextSibling;
     while (edit && edit.nodeType != 1) edit = edit.nextSibling;
 
     new_folders.push(active);
 
-    addEvent(edit, "click", edit_folder_name);
+    jQuery(edit).click(edit_folder_name);
 
 }
 function edit_folder_name(e)
@@ -177,9 +181,9 @@ function edit_folder_name_cb(response)
     var old_ns = folder.getAttribute('ref');
     var new_ns = old_ns.replace(/:[^:]*$/, ":" + response);
 
-    npd_ns = $('npd_ns');
+    npd_ns = jQuery('#npd_ns');
     var regex = new RegExp("^" + old_ns);
-    npd_ns.value = npd_ns.value.replace(regex, new_ns);
+    npd_ns.val(npd_ns.val().replace(regex, new_ns));
     var length = new_folders.length;
     if (length > 0) {
         while (length--) {
@@ -200,7 +204,7 @@ function new_folder_click(e)
         link = link.parentNode;
     }
     active.className = 'idx_dir';
-    $('npd_ns').value = link.getAttribute('ref');
+    jQuery('#npd_ns').val(link.getAttribute('ref'));
     active = link;
     active.className = 'idx_dir active';
 }
@@ -208,9 +212,9 @@ function page_click(e)
 {
     link = getEventElement(e);
     stop_event(e);
-    input = $('npd_page_name');
-    input.value = link.innerHTML;
-    input.className = 'text';
+    input = jQuery('#npd_page_name');
+    input.val(link.innerHTML);
+    input.addClass('text');
 }
 function plus_clicked(e)
 {
@@ -230,10 +234,10 @@ function plus_clicked(e)
 }
 function init_index()
 {
-    var div = $('dw_page_div');
-    for (i=0; i<2; i++){
-        var to_be_removed = firstDescendant(div);
-        div.removeChild(to_be_removed);
+    var div = jQuery('#dw_page_div');
+
+    for (var i = 0; i<2; i++){
+        jQuery(':first-child', div).remove();
     }
     links = document.getElementsByTagName("a");
     var pattern = new RegExp("(^|\\s)idx_dir(\\s|$)");
@@ -243,23 +247,23 @@ function init_index()
         if ( pattern.test(links[i].className) ) {
             links[i].href += '&npd=1';
             var a = links[i].href.replace(/.*idx=:?([^&]*).*/, "$1");
-            var a = a.replace(/%3A/, ":");
-            if (a == $('npd_ns').value) {
+            a = a.replace(/%3A/, ":");
+            if (a == jQuery('#npd_ns').val()) {
                 links[i].className += " active";
                 active = links[i];
             };
             li = links[i].parentNode.parentNode;
             if (li.className == "closed") {
-                addEvent(li, "click", plus_clicked);
+                jQuery(li).click(plus_clicked);
             }
         } else {
-            addEvent(links[i], "click", page_click);
+            jQuery(links[i]).click(page_click);
         }
     }
     // attach events to the buttons
-    addEvent($('npd_save'), "click", npd_save);
-    addEvent($('npd_cancel'), "click", npd_cancel);
-    addEvent($('npd_new_folder'), "click", npd_new_folder);
+    jQuery('#npd_save').click(npd_save);
+    jQuery('#npd_cancel').click(npd_cancel);
+    jQuery('#npd_new_folder').click(npd_new_folder);
     // add a root image
     // prepare new node
 <?php
@@ -286,18 +290,18 @@ if (! $title) {
         div.appendChild(root);
     }
     root.appendChild(ul);
-    addEvent(root_link, "click", new_folder_click);
+    jQuery(root_link).click(new_folder_click);
 
     if ((typeof active) == 'undefined') {
         // in case the namespace the popup was called from
         // does not exist, we just make the root active
         active = root_link;
         active.className = "idx_dir active";
-        $('npd_ns').value = "";
+        jQuery('#npd_ns').val("");
     }
 
-    $('dw_page_div').style.display = '';
-    $('npd_page_name').focus();
+    jQuery('#dw_page_div').show();
+    jQuery('#npd_page_name').focus();
 }
 function stop_event(e)
 {
