@@ -10,7 +10,7 @@ All documentation for this plugin can be found at
 http://www.dokuwiki.org/plugin:npd.
 
 If you install this plugin manually, make sure it is installed in
-`lib/plugins/jiralinks/` - if the folder is called different it
+`lib/plugins/npd/` - if the folder is called different it
 will not work!
 
 Please refer to http://www.dokuwiki.org/plugins for additional info
@@ -18,6 +18,36 @@ on how to install plugins in DokuWiki.
 
 This plugin is adopted from the original New Page Dialog plugin by Pierre Spring  at
 https://www.dokuwiki.org/plugin:new_page_dialog.
+
+Add Button to Template
+----------------------
+
+This plugin requires the modification of the template (Often `main.php`). Decide where
+you want to insert the *Create New Page* button in your template and insert the following code:
+
+```php
+if (!plugin_isdisabled('npd') && ($npd =& plugin_load('helper', 'npd'))) { 
+    $npd->html_new_page_button();
+}
+```
+
+Most likely you want to do that in the `/lib/tpl/default/main.php` inside the `<div id="bar__bottomright"/>` as follows:
+
+```html
+<div class="bar-right" id="bar__bottomright">
+  <?php if (!plugin_isdisabled('npd') && ($npd =& plugin_load('helper', 'npd'))) $npd->html_new_page_button(); ?>
+  <?php tpl_button('subscription')?>
+  <?php tpl_button('admin')?>
+  <?php tpl_button('profile')?>
+  <?php tpl_button('login')?>
+  <?php tpl_button('index')?>
+  <?php tpl_button('top')?>&nbsp;
+</div>
+```
+
+Note that the button will only be shown, if the browser is JavaScript enabled.
+
+Exception: The template Dokubook has New Page Dialog already implemented. (Configure to type `link`.)
 
 ----
 Copyright (C) 2014 christian studer <christian.studer@meteotest.ch>
