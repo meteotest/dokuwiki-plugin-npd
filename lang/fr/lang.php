@@ -12,7 +12,6 @@ $lang['btn_new_folder']  = 'Nouveau répertoire';
 $lang['btn_ok'] = 'OK';
 
 /* dialogs */
-$lang['dlg_confirm_page_name'] = 'Etes vous sur de vouloir \ncréer une page qui se nomme:\n';
 $lang['dlg_new_folder'] = 'Entrer le nom du nouveau répertoire:';
 
 /* misc */

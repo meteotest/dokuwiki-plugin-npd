@@ -13,7 +13,6 @@ $lang['btn_new_folder']  = '新しいフォルダ';
 $lang['btn_ok'] = 'OK';
  
 /* dialogs */
-$lang['dlg_confirm_page_name'] = '新しいページを作成します。よろしいですか？ \nページ名:\n';
 $lang['dlg_new_folder'] = '新しいフォルダ名を入力してください。:';
  
 /* misc */

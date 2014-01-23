@@ -13,7 +13,6 @@ $lang['btn_new_folder']  = 'Nueva Carpeta';
 $lang['btn_ok'] = 'Aceptar';
  
 /* dialogs */
-$lang['dlg_confirm_page_name'] = '¿Está seguro de que desea \n crear una página llamada:\n?';
 $lang['dlg_new_folder'] = 'Introduzca el nombre de la carpeta:';
  
 /* misc */

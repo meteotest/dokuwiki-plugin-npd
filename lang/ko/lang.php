@@ -13,7 +13,6 @@ $lang['btn_new_folder']  = '새 폴더';
 $lang['btn_ok'] = '확인';
  
 /* dialogs */
-$lang['dlg_confirm_page_name'] = '다음 페이지를\n만드시겠습니까?\n';
 $lang['dlg_new_folder'] = '새 폴더 이름:';
  
 /* misc */

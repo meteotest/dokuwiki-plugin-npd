@@ -13,7 +13,6 @@ $lang['btn_new_folder']  = 'Nieuwe map aanmaken';
 $lang['btn_ok'] = 'OK';
  
 /* dialogs */
-$lang['dlg_confirm_page_name'] = 'Weet u zeker dat u een pagina\naan wilt maken met de naam:\n';
 $lang['dlg_new_folder'] = 'Geef de naam van de nieuwe map op:';
  
 /* misc */

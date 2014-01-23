@@ -14,7 +14,6 @@ $lang['btn_new_folder']  = 'Nova mapa';
 $lang['btn_ok'] = 'Potrdi';
  
 /* dialogs */
-$lang['dlg_confirm_page_name'] = 'Ste prepričani, da želite\n ustvariti stran:\n';
 $lang['dlg_new_folder'] = 'Vnesite ime nove mape:';
  
 /* misc */

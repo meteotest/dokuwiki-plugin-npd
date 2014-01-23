@@ -13,7 +13,6 @@ $lang['btn_new_folder']  = 'Создать пространство имён';
 $lang['btn_ok'] = 'OK';
  
 /* dialogs */
-$lang['dlg_confirm_page_name'] = 'Вы действительно хотите\nсоздать страницу с именем:\n';
 $lang['dlg_new_folder'] = 'Введите имя нового пространства имён:';
  
 /* misc */

@@ -13,7 +13,6 @@ $lang['btn_new_folder']  = 'Nowy katalog';
 $lang['btn_ok'] = 'OK';
  
 /* dialogs */
-$lang['dlg_confirm_page_name'] = 'Czy na pewno utworzyć stronę:\n';
 $lang['dlg_new_folder'] = 'Podaj nazwę katalogu:';
  
 /* misc */

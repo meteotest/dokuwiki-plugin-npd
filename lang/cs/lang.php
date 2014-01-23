@@ -13,7 +13,6 @@ $lang['btn_new_folder']  = 'Nová složka';
 $lang['btn_ok'] = 'OK';
  
 /* dialogs */
-$lang['dlg_confirm_page_name'] = 'Určitě chcete vytvořit \nstránku s názvem:\n';
 $lang['dlg_new_folder'] = 'Zadejte název nové složky:';
  
 /* misc */

@@ -13,7 +13,6 @@ $lang['btn_new_folder']  = 'Neuer Ordner';
 $lang['btn_ok'] = 'OK';
 
 /* dialogs */
-$lang['dlg_confirm_page_name'] = 'Sind Sie sicher, dass Sie\neine Seite mit dem folgenden\nTitel anlegen wollen?\n';
 $lang['dlg_new_folder'] = 'Namen für neuen Ordner eingeben:';
 
 /* misc */

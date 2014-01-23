@@ -13,7 +13,6 @@ $lang['btn_new_folder']  = 'Ny mappe';
 $lang['btn_ok'] = 'OK';
  
 /* dialogs */
-$lang['dlg_confirm_page_name'] = 'Er du sikker på at du ønsker å \n opprette en side med navnet:\n';
 $lang['dlg_new_folder'] = 'Før inn nytt mappenavn:';
  
 /* misc */
