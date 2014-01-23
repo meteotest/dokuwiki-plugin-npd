@@ -234,10 +234,11 @@ function plus_clicked(e)
 }
 function init_index()
 {
-    var div = jQuery('#dw_page_div');
+    var div = document.getElementById('dw_page_div');
 
     for (var i = 0; i<2; i++){
-        jQuery(':first-child', div).remove();
+    	var to_be_removed = firstDescendant(div);
+        div.removeChild(to_be_removed);
     }
     links = document.getElementsByTagName("a");
     var pattern = new RegExp("(^|\\s)idx_dir(\\s|$)");
