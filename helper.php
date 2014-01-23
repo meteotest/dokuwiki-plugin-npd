@@ -27,31 +27,37 @@ class helper_plugin_npd extends DokuWiki_Plugin
         return $result;
     }
 
-    function html_new_page_button($return = false)
+    /**
+     * Create the HTML for the new page button
+     *
+     * If $return is set to FALSE, will directly echo the HTML
+     *  
+     * @param bool $return
+     * @return string
+     */
+    public function html_new_page_button($return = false)
     {
+        $ret = '';
+        
         global $conf;
         global $ID;
 
-        /* don't show the button if the user doesn't have edit permissions */
+        // Don't show the button if the user doesn't have edit permissions
         if(auth_quickaclcheck($ID) < AUTH_EDIT) {
             return '';
         }
 
         $label = $this->getLang('btn_create_new_page');
         if (!$label) {
-            // needs translation ;)
+            // Translation not found
             $label = 'Create New Page';
         }
-
         $tip = htmlspecialchars($label);
 
-        $ret = '';
+        // Filter id (without urlencoding)
+        $id = idfilter($ID, false);
 
-        //filter id (without urlencoding)
-        $id = idfilter($ID,false);
-
-
-        //make nice URLs even for buttons
+        // Make nice URLs even for buttons
         if($conf['userewrite'] == 2){
             $script = DOKU_BASE.DOKU_SCRIPT.'/'.$id . "?";
         }elseif($conf['userewrite']){
@@ -76,26 +82,24 @@ class helper_plugin_npd extends DokuWiki_Plugin
         $link_type = $this->getConf('link_type');
 
         switch ($link_type) {
-        case 'link':
-            $ret .= '<a rel="nofollow" href="'.$url.'" style="display:none;" id="npd_create_button" class="action npd">'.$label.'</a>';
-            break;
-        default:
-            $ret .= '<form class="button" action="'.$url.'"><div class="no">';
-            $ret .= '<input id="npd_create_button" type="submit" value="'.htmlspecialchars($label).'" class="button" ';
-            $ret .= 'title="'.$tip.'" ';
-            // the button will be enabled by js, as it does not
-            // make any sense in a browser without js ;)
-            $ret .= 'style="display: none;" ';
-            $ret .= '/>';
-            $ret .= '</div>';
-            $ret .= '</form>';
+	        case 'link':
+	            $ret .= '<a rel="nofollow" href="'.$url.'" style="display:none;" id="npd__create_button" class="action npd">'.$label.'</a>';
+	            break;
+	        case 'button':
+	        default:
+	            $ret .= '<form class="button" action="'.$url.'" id="npd__create_form"><div class="no">';
+	            $ret .= '<input id="npd__create_button" type="submit" value="'.htmlspecialchars($label).'" class="button" ';
+	            $ret .= 'title="'.$tip.'" ';
+	            // the button will be enabled by js, as it does not
+	            // make any sense in a browser without js ;)
+	            $ret .= 'style="display: none;" ';
+	            $ret .= '/>';
+	            $ret .= '</div>';
+	            $ret .= '</form>';
         }
 
-        if ($return) {
-            return $ret;
-        } else {
-            echo $ret;
-        }
+        if(!$return) echo $ret;
+        return $ret;
     }
 }
 
