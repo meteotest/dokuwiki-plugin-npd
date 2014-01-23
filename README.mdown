@@ -45,9 +45,9 @@ Most likely you want to do that in the `/lib/tpl/default/main.php` inside the `<
 </div>
 ```
 
-Note that the button will only be shown, if the browser is JavaScript enabled.
+Note that the button will only be shown if the browser is JavaScript enabled.
 
-Exception: The template Dokubook has New Page Dialog already implemented. (Configure to type `link`.)
+Exception: The template DokuBook has New Page Dialog already implemented. (Configure to type `link`.)
 
 ----
 Copyright (C) 2014 christian studer <christian.studer@meteotest.ch>
