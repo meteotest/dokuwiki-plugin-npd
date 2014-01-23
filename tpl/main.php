@@ -100,11 +100,6 @@ function npd_save(e)
 {
     stop_event(e);
     var page_name = jQuery('#npd_page_name').val();
-    var default_page_name = jQuery('#npd_page_name').attr('value');
-    if (page_name == default_page_name) {
-        var answer = confirm('<?php echo htmlspecialchars($npd->getLang("dlg_confirm_page_name")); ?>'+page_name);
-        if (!answer) return;
-    }
     opener.location.href = "doku.php?do=edit&id=" + jQuery('#npd_ns').val() + ":" + page_name;
     window.close();
 }
@@ -265,6 +260,12 @@ function init_index()
     jQuery('#npd_save').click(npd_save);
     jQuery('#npd_cancel').click(npd_cancel);
     jQuery('#npd_new_folder').click(npd_new_folder);
+
+    // Allow enter to create new page
+    jQuery('#npd_page_name').keyup(function(e) {
+        if(e.keyCode == 13) npd_save(e);
+    });
+    
     // add a root image
     // prepare new node
 <?php
