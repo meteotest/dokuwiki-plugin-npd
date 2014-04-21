@@ -1,19 +1,13 @@
 <?php
+
 /**
- * český jazykový soubor pro plugin "New Page Dialog"
- *
  * @license    GPL 2 (http://www.gnu.org/licenses/gpl.html)
- * @author     Tomas Safarik <safarik[curly thing]server[full stop]cz>
+ * 
+ * @author Tomas Safarik <safarik[curly thing]server[full stop]cz>
  */
- 
-/* buttons */
-$lang['btn_create_new_page'] = 'Vytvořit novou stránku';
-$lang['btn_create_page'] = 'Vytvořit stránku';
-$lang['btn_new_folder']  = 'Nová složka';
-$lang['btn_ok'] = 'OK';
- 
-/* dialogs */
-$lang['dlg_new_folder'] = 'Zadejte název nové složky:';
- 
-/* misc */
-$lang['msc_page_title'] = 'Název stránky';
+$lang['btn_create_new_page']   = 'Vytvořit novou stránku';
+$lang['btn_create_page']       = 'Vytvořit stránku';
+$lang['btn_new_folder']        = 'Nová složka';
+$lang['btn_ok']                = 'OK';
+$lang['dlg_new_folder']        = 'Zadejte název nové složky:';
+$lang['msc_page_title']        = 'Název stránky';
