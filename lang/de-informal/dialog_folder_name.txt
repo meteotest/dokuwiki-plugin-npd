@@ -1,0 +1,3 @@
+Bitte gib den Ordnernamen ein.\\
+Beachte, dass der Ordner **NICHT** angelegt wird,\\
+bevor eine Seite in dem Ordner **GESPEICHERT** ist.
