@@ -1,3 +1,2 @@
-Please enter the folder Name.\\
-Note that a folder will **NOT** be created before a page\\
-within the folder is **SAVED**.
+Моля въведете Име на папка.\\
+Забележка: Папката **НЯМА** да бъде създадена преди да **ЗАПИШЕТЕ** страница в нея.
