@@ -1,7 +1,7 @@
 base   npd
 author christian studer
 email  christian.studer@meteotest.ch
-date   2014-06-16
+date   2015-11-05
 name   New Page Dialog
 desc   A dialog which helps people to create new pages.
 url    http://www.dokuwiki.org/plugin:npd
