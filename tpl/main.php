@@ -243,7 +243,7 @@ function init_index()
         if ( pattern.test(links[i].className) ) {
             links[i].href += '&npd=1';
             var a = links[i].href.replace(/.*idx=:?([^&]*).*/, "$1");
-            a = a.replace(/%3A/, ":");
+            a = a.replace(/%3A/g, ":");
             if (a == jQuery('#npd_ns').val()) {
                 links[i].className += " active";
                 active = links[i];
