@@ -2,7 +2,7 @@
 
 /**
  * @license    GPL 2 (http://www.gnu.org/licenses/gpl.html)
- * 
+ *
  * @author Neli Dimitrova <neli.dimitrova.office@gmail.com>
  */
 $lang['btn_create_new_page']   = 'Създай нова страница';
